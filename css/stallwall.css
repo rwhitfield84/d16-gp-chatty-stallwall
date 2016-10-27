@@ -1,3 +1,11 @@
 
 
 /*# sourceMappingURL=stallwall.css.map */
+.dim {
+	background-color: black;
+	color:  white;
+}
+
+.largify {
+	font-size:  2em;
+}
