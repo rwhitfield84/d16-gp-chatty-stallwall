@@ -8,4 +8,4 @@ function showData(returnedData){
 
 };
 
-writings.loadData(showData);
+Writings.loadData(showData);
