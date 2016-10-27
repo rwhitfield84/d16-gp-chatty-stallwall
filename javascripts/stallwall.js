@@ -21,3 +21,14 @@ document.getElementById('input').addEventListener("keypress", function (e) {
 document.getElementById("clear").addEventListener("click", function erase() {
 		document.getElementById('output').innerHTML = "";
 });
+
+document.getElementById('dark').addEventListener('change', function dimLights() {
+	document.getElementById("wrapper").classList.toggle("dim"); 
+	});
+
+document.getElementById('largify').addEventListener('change', function blastIt() {
+		document.getElementById("wrapper").classList.toggle("largify"); 
+	});
+
+
+//document.getElementById('largify').addEventListener('click')
