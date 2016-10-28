@@ -27,7 +27,15 @@ document.getElementById('dark').addEventListener('change', function dimLights() 
 	});
 
 document.getElementById('largify').addEventListener('change', function blastIt() {
-		document.getElementById("wrapper").classList.toggle("largify"); 
+		document.getElementById("output").classList.toggle("largify"); 
+	});
+
+document.getElementById('tag').addEventListener('change', function tagIt() {
+		document.getElementById("output").classList.toggle("tag"); 
+	});
+
+document.getElementById('move').addEventListener('change', function move() {
+		document.getElementById("body").classList.toggle("move"); 
 	});
 
 
