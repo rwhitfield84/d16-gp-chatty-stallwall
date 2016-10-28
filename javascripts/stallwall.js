@@ -3,7 +3,6 @@
 //default state
 document.getElementById("clear").disabled = true;
 
-
 document.getElementById('input').addEventListener("keypress", function (e) {
 	var userInput = document.getElementById('input').value; 
 	
@@ -12,10 +11,24 @@ document.getElementById('input').addEventListener("keypress", function (e) {
 	}
 
 	if (e.keyCode === 13) {
-		document.getElementById('output').innerHTML += "<p class='message'>" + userInput +"</p>";
-	}
+        var i = Math.floor((Math.random() * 100) + 1);
+        var string = "<p class='msg' " + " 'id=p" + i + "'>" + userInput + "<button class='btn'>" + "DELETE" + "</button>"  + "</p>";
+        document.getElementById('output').innerHTML += string;
+        var msg = document.getElementById("output").innerHTML;
+    }
 
 });
+
+
+
+document.getElementById('output').addEventListener('click', function touch(){
+	if (event.target.className === "btn"){
+		var parent = event.target.parentNode;
+		console.log(parent);
+		parent.remove();
+	}
+	
+	})
 
 
 document.getElementById("clear").addEventListener("click", function erase() {
@@ -39,4 +52,3 @@ document.getElementById('move').addEventListener('change', function move() {
 	});
 
 
-//document.getElementById('largify').addEventListener('click')
