@@ -1,11 +1,105 @@
 
 
-/*# sourceMappingURL=stallwall.css.map */
+/*# sourceMappingURL=stall.css.map */
+
+
+/**********TOGGLE CLASSES***********/
 .dim {
-	background-color: black;
-	color:  white;
+	background-color: rgba(0,0,0,0.8); 
+	color: white;
 }
 
 .largify {
-	font-size:  2em;
+	font-size:  1.2em;
+	text-align: center;
+	font-weight:  bold; 
+	}
+
+.tag {
+	font-family: 'Tagtype-Freefont';
 }
+
+.move {
+	background: url('../images/stall.jpg') no-repeat top center fixed; 
+	  background-size: cover;
+}
+
+
+
+/*******************BODY********************/
+
+
+
+body { 
+	font-size: 1.4em;
+	background-color: #EEDFCC;
+	font-family: 'PermanentMarker'; 
+	text-align: center;
+	background: url('../images/stallwall2.jpg') no-repeat top center fixed; 
+	  background-size: cover;
+
+ 
+ }
+
+@font-face {
+    font-family: 'PermanentMarker'; 
+    src: url('PermanentMarker.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Tagtype-Freefont'; 
+    src: url('tagtype-freefont.ttf'); /*URL to font*/
+}
+
+
+
+/*********************NAV********************/
+
+
+
+nav {
+	text-align: center;
+	font-size:  .8em;
+	border: .1em solid black;
+	top: 0;
+	height: 1.7em;
+	right: .2em;
+    z-index: 100;
+  	position: fixed;
+    width: 100%;
+    margin: 0 auto;
+   	padding:  1em;
+    display: block;
+	color:  white;
+	background-color:  black;
+	background-size: 100%;
+    
+}
+
+#clear {
+	font-size: .6em;
+	padding: .77em;
+	color:  black;
+	font-family: 'PermanentMarker'; 
+
+}
+
+#input {
+	
+	width: 20em;
+	font-size: .7em;
+	height: 2em;
+}
+
+/***********************WALL*******************/
+
+
+#wrapper{
+	text-align: center;
+	position: relative;
+	top: 3em;
+	
+
+
+}
+
