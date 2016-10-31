@@ -20,27 +20,54 @@
 	font-family: 'Tagtype-Freefont';
 }
 
-.move {
+.ladies {
 	background: url('../images/stall.jpg') no-repeat top center fixed; 
-	  background-size: cover;
+	background-size: cover;
+  height: 100vh;
+  min-height: 100%;
+}
+
+.wood {
+    background: url('../images/wood.jpg') no-repeat top center fixed; 
+    background-size: cover;
+    height: 100vh;
+    min-height: 100%;
+    color: white;
+
+}
+
+
+.dog{
+    background: url('../images/dog.jpg') no-repeat top center fixed; 
+    background-size: cover;
+    height: 100vh;
+    min-height: 100%;
+
+}
+
+.default{
+    background: url('../images/stallwall2.jpg') no-repeat top center fixed; 
+    background-size: cover;
+    height: 100vh;
+    min-height: 100%;
+
 }
 
 
 
 /*******************BODY********************/
-
+html {
+  height:  100%;
+}
 
 
 body { 
 	font-size: 1.4em;
-	background-color: #EEDFCC;
+	background-color: black;
 	font-family: 'PermanentMarker'; 
 	text-align: center;
-	background: url('../images/stallwall2.jpg') no-repeat top center fixed; 
-	  background-size: cover;
-
  
- }
+}
 
 @font-face {
     font-family: 'PermanentMarker'; 
@@ -95,7 +122,23 @@ nav {
 	height: 2em;
 }
 
+select {
+  margin-left: 2em;
+  -webkit-appearance: none;
+  font-family: 'PermanentMarker'; 
+  background-color:  black;
+  color:  white;
+  padding: .5em;
+  font-size:  .7em;
+}
+
 /***********************WALL*******************/
+
+.cover {
+   background: url('../images/stallwall2.jpg') no-repeat top center fixed; 
+  background-size: cover;
+  height:  100vh;
+}
 
 
 #wrapper {
@@ -103,6 +146,7 @@ nav {
 	position: relative;
 	top: 3em;
 	font-size: .8em;
+  height: 100%;
 }
 
 
@@ -149,4 +193,27 @@ border: .3em solid black;
     background-color: red;
 
 }
+
+/*****************GLOW***************/
+
+
+.msg {
+  
+  
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(10, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.9s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+}
+
+.msg:hover, .msg:focus, .msg:active {
+  box-shadow: 0 0 15px rgba(8, 4, 50, 0.6);
+}
+
 

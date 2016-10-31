@@ -50,8 +50,27 @@ document.getElementById('tag').addEventListener('change', function tagIt() {
 		document.getElementById("output").classList.toggle("tag"); 
 	});
 
-document.getElementById('move').addEventListener('change', function move() {
-		document.getElementById("body").classList.toggle("move"); 
+var select = document.getElementById('switchStalls');
+select.addEventListener('change', function move() {
+		document.getElementById("cover").className = '';
+
+		var selectedId = select[select.selectedIndex].id;
+		console.log(selectedId);
+		if (selectedId == 'ladies') {
+		document.getElementById("cover").classList.add('ladies');
+		} 
+		else if (selectedId == 'wood') {
+		document.getElementById("cover").classList.add('wood');
+
+		}
+		else if (selectedId == 'dog') {
+		document.getElementById("cover").classList.add('dog');
+
+		}
+		else if (selectedId == 'default') {
+		document.getElementById("cover").classList.add('default');
+
+		}
 	});
 
 
