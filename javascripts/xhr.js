@@ -3,9 +3,11 @@
 function showData(returnedData){
 	//console.log(returnedData);
 	for (var i = 0; i < returnedData.length; i++){
-		document.getElementById("output").innerHTML += "<p class='msg'>" + returnedData[i] + "<button class='btn'>SCRUB " + "</button>" + "</p>";
+		// var origComment = "<p class='msg'>" + returnedData[i] + "<button class='btn'>SCRUB " + "</button>" + "</p>";
+		// document.getElementById("output").innerHTML += origComment;
+		Chatty.storeMsg(returnedData[i]);
 	}
 
 };
 
-Writings.loadData(showData);
+Chatty.loadData(showData);

@@ -11,10 +11,7 @@ document.getElementById('input').addEventListener("keypress", function (e) {
 	}
 
 	if (e.keyCode === 13) {
-        var i = Math.floor((Math.random() * 100) + 1);
-        var string = "<p class='msg' " + " 'id=p" + i + "'>" + userInput + "<button class='btn'>" + "SCRUB" + "</button>"  + "</p>";
-        document.getElementById('output').innerHTML += string;
-        var msg = document.getElementById("output").innerHTML;
+        Chatty.storeMsg(userInput);
         var clearOne = document.getElementById("input").value = '';
        	var clearTwo = document.getElementById("clear").disabled = true;
        	return [clearOne, clearTwo]; 
@@ -22,16 +19,9 @@ document.getElementById('input').addEventListener("keypress", function (e) {
 
 });
 
-
-
 document.getElementById('output').addEventListener('click', function touch(){
-	if (event.target.className === "btn"){
-		var parent = event.target.parentNode;
-		console.log(parent);
-		parent.remove();
-	}
-	
-	})
+	Chatty.deleteMsg(event.target);	
+})
 
 
 document.getElementById("clear").addEventListener("click", function erase() {
