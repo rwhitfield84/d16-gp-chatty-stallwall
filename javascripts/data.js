@@ -1,7 +1,6 @@
 "use strict"
-var returnedData = [];
-
-var Writings = (function(graffiti){
+var Chatty = (function(oldChatty){
+	var returnedData = [];
 	return {
 		loadData: function(callback){
 			var loader = new XMLHttpRequest();
@@ -11,8 +10,9 @@ var Writings = (function(graffiti){
 			});
 			loader.open("GET", "javascripts/graffiti.json");
 			loader.send();
-		} 
+		}
 	}
+		return oldChatty
+})(Chatty);
 
-})();
 

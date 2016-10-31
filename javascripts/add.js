@@ -1,22 +1,36 @@
 "use strict"
-var addMsg = (function add(random){
+var Chatty = (function(oldChatty){
 	var msgArray = [];
-
-	return {
-		storeMsg: function(msg){
-			var i = Math.floor((Math.random() * 100) + 1);
-        	var string = "<p class='msg' " + " 'id=p" + i + "'>" + msg + "<button class='btn'>" + "DELETE" + "</button>"  + "</p>";
-			msgArray += string;
+	var msgCount = 0;
+	oldChatty.storeMsg = function(msg){
+			msgCount++;
+			var msgObj = {};
+			msgObj.msg = msg;
+			msgObj.id = "p" + msgCount;
+			msgArray.push(msgObj);
+        	var string = "<p class='msg' " + "id='p" + msgCount + "'>" + msg + "<button class='btn'>" + "SCRUB" + "</button>"  + "</p>";
 			var spot = document.getElementById("output");
-			spot.innerHTML += msgArray;
-			function getString(spot) {
-				touch(spot);
+			spot.innerHTML += string;
+		},
+
+	oldChatty.readMsg = function(msg) {
+			return msgArray += document.getElementById('input').value;
+		},
+
+	oldChatty.deleteMsg = function(btnclicked) {
+		if (event.target.className === "btn"){
+			var parent = event.target.parentNode;
+			var parentId = parent.id;
+			parent.remove();
 			}
-		},
+		for (var t = 0; t < msgArray.length; t++){
+			if (parentId === msgArray[t].id){
+				var deleteThisOne = t;
+				console.log(deleteThisOne);
+			}
+		}
+		msgArray.splice(deleteThisOne, 1);
+		}
+		return oldChatty;
+})(Chatty);
 
-		readMsg: function() {
-			return msgArray;
-		},
-
-	}
-	})();
