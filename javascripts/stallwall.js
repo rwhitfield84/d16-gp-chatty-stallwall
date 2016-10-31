@@ -12,9 +12,12 @@ document.getElementById('input').addEventListener("keypress", function (e) {
 
 	if (e.keyCode === 13) {
         var i = Math.floor((Math.random() * 100) + 1);
-        var string = "<p class='msg' " + " 'id=p" + i + "'>" + userInput + "<button class='btn'>" + "DELETE" + "</button>"  + "</p>";
+        var string = "<p class='msg' " + " 'id=p" + i + "'>" + userInput + "<button class='btn'>" + "SCRUB" + "</button>"  + "</p>";
         document.getElementById('output').innerHTML += string;
         var msg = document.getElementById("output").innerHTML;
+        var clearOne = document.getElementById("input").value = '';
+       	var clearTwo = document.getElementById("clear").disabled = true;
+       	return [clearOne, clearTwo]; 
     }
 
 });

@@ -7,10 +7,11 @@
 .dim {
 	background-color: rgba(0,0,0,0.8); 
 	color: white;
+	background-size: cover;
 }
 
 .largify {
-	font-size:  1.2em;
+	font-size:  1.15em;
 	text-align: center;
 	font-weight:  bold; 
 	}
@@ -55,7 +56,10 @@ body {
 
 /*********************NAV********************/
 
-
+#logo {
+  margin-right: 2em;
+  font-family: 'Tagtype-Freefont';
+}
 
 nav {
 	text-align: center;
@@ -94,12 +98,55 @@ nav {
 /***********************WALL*******************/
 
 
-#wrapper{
+#wrapper {
 	text-align: center;
 	position: relative;
 	top: 3em;
-	
+	font-size: .8em;
+}
 
+
+
+/* Bubble Float Left */
+.btn {
+font-family: 'PermanentMarker'; 
+margin-left: 2em;
+padding-left: 1em;
+border: .3em solid black;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.btn:before {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: calc(50% - 10px);
+  left: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #e1e1e1 transparent transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.btn:hover, .hvr-bubble-float-left:focus, .btn:active {
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  background-color: red;
+}
+.btn:hover:before, .hvr-bubble-float-left:focus:before, .btn:active:before {
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+    background-color: red;
 
 }
 
