@@ -17,10 +17,10 @@
 			<input id="largify" type="checkbox"> Make a Statement
 			<input id="tag" type="checkbox"> tag this stall
 			<select id="switchStalls"> 
-	  			<option id="default">Switch Stalls</option>
-	  			<option id="wood">•Luxury Stall</option>
-	  			<option id="ladies">•Ladies' Room</option>
-	  			<option id="dog">•Dog in your Stall</option>
+	  			<option value="default">Switch Stalls</option>
+	  			<option value="wood">•Luxury Stall</option>
+	  			<option value="ladies">•Ladies' Room</option>
+	  			<option value="dog">•Dog in your Stall</option>
 			</select>
 
 		</nav>
@@ -28,14 +28,17 @@
 		<div id="wrapper">
 		
 			<h2> SPREAD THE WORD: </h2> 
-			<div id="output"> </div> 
+			<div><ul id="output"></ul> </div> 
 		</div>
 	
 	</div>
-	<script type="text/javascript" src= "javascripts/chatty.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+	<script src="javascripts/chatty.js"></script>
+	<script src="javascripts/chatty2.js"></script>
+	<script src='javascripts/lastChatty.js'></script>	
 	<script src="javascripts/stallwall.js"></script>
-	<script src="javascripts/data.js"></script>
-	<script src="javascripts/xhr.js"></script>
-	<script src='javascripts/add.js'></script>	
 </body>
 </html>

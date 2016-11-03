@@ -1,66 +1,58 @@
-"use strict" 
+"use strict" ;
 
-//default state
-document.getElementById("clear").disabled = true;
+$("#clear").disabled = true;
+$('#input').keypress(function (e) {
+	let userInput = $('#input').val(); 
 
-document.getElementById('input').addEventListener("keypress", function (e) {
-	var userInput = document.getElementById('input').value; 
-	
-	if (userInput !== "") {
-		document.getElementById("clear").disabled = false;
-	}
+if (userInput !== "") {
+	$("#clear").disabled = true;
+}
 
-	if (e.keyCode === 13) {
-        Chatty.storeMsg(userInput);
-        var clearOne = document.getElementById("input").value = '';
-       	var clearTwo = document.getElementById("clear").disabled = true;
-       	return [clearOne, clearTwo]; 
-    }
+if (e.keyCode === 13) {
+	Chatty.showMsg(userInput);
+	let clearOne =$("#input").val('');
+	let clearTwo =$("#clear").disabled = false;
+	return [clearOne, clearTwo]; 
+}
 
 });
 
-document.getElementById('output').addEventListener('click', function touch(){
-	Chatty.deleteMsg(event.target);	
-})
-
-
-document.getElementById("clear").addEventListener("click", function erase() {
-		document.getElementById('output').innerHTML = "";
+$(document).on('click','.btn',function() {
+	$(this).closest(".msg").remove();
 });
 
-document.getElementById('dark').addEventListener('change', function dimLights() {
-	document.getElementById("wrapper").classList.toggle("dim"); 
-	});
 
-document.getElementById('largify').addEventListener('change', function blastIt() {
-		document.getElementById("output").classList.toggle("largify"); 
-	});
+$("#clear").click (function erase() {
+$	('#output').html('');
+});
 
-document.getElementById('tag').addEventListener('change', function tagIt() {
-		document.getElementById("output").classList.toggle("tag"); 
-	});
+$('#dark').change(function dimLights() {
+	$("#wrapper").toggleClass("dim"); 
+});
 
-var select = document.getElementById('switchStalls');
-select.addEventListener('change', function move() {
-		document.getElementById("cover").className = '';
+$('#largify').change(function blastIt() {
+	$("#output").toggleClass("largify"); 
+});
 
-		var selectedId = select[select.selectedIndex].id;
-		console.log(selectedId);
-		if (selectedId == 'ladies') {
-		document.getElementById("cover").classList.add('ladies');
-		} 
-		else if (selectedId == 'wood') {
-		document.getElementById("cover").classList.add('wood');
+$('#tag').change(function tagIt() {
+	$("#output").toggleClass("tag"); 
+});
 
-		}
-		else if (selectedId == 'dog') {
-		document.getElementById("cover").classList.add('dog');
+$("#switchStalls").change(function() {
+	if($(this).val() == "ladies") {
+		$(".cover").toggleClass("ladies");
+	}else if($(this).val() == "wood") {
+		$(".cover").toggleClass("wood");
+	} else if($(this).val() == "dog") {
+		$(".cover").toggleClass("dog");
+	}else if($(this).val() == 'default') {
+		$(".cover").toggleClass("default");
+}
+});
 
-		}
-		else if (selectedId == 'default') {
-		document.getElementById("cover").classList.add('default');
 
-		}
-	});
+
+
+
 
 
